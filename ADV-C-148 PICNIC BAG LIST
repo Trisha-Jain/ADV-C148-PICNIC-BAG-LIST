@@ -1,0 +1,23 @@
+from tkinter import *
+import random
+
+root=Tk()
+root.title("List")
+root.geometry("400x400")
+
+total_items = Label(root)
+items_to_take = Label(root)
+
+def randomlist():
+    randomlist = random.sample(range(1,4),2)
+    items_to_take["text"] = "Put items numbers " + str(randomlist)+" In the bag"
+
+btn=Button(root,text="Which items to put in the bag?? ",command=randomlist,background="#ffc561")
+btn.place(relx=0.5,rely=0.5,anchor=CENTER,)
+total_items["text"] = " Listed Items are" + '\n'  "1. Tent" + '\n' "2. Sandwich " + '\n' "3. ID Card " + '\n' "4. Bottle"
+
+total_items.place(relx=0.5,rely=0.35,anchor=CENTER)
+items_to_take.place(relx=0.5,rely=0.6,anchor=CENTER)
+
+root.mainloop()
+
